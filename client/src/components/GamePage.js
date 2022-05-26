@@ -18,7 +18,7 @@ export default class GamePage extends React.Component {
         super(props);
         this.state = {
             game: {
-                page: 'home', // home, enterPlayerNames, selectMode, playing
+                page: '', // home, enterPlayerNames, selectMode, playing
                 players: [],
                 flips: gameData.typesOfFlips,
                 gamemode: '', // "gameOfFlip", "addOn", "numbers"
@@ -42,8 +42,8 @@ export default class GamePage extends React.Component {
 
     async componentDidMount() {
         try {
-            //const checkLogin = await sendData('/checklogin', {});
-            const checkLogin = {status: 'success', redirect: 'game', user: {username: 'test'}}; // TESTING PURPOSES ONLY
+            const checkLogin = await sendData('/checklogin', {});
+            //const checkLogin = {status: 'success', redirect: 'game', user: {username: 'test'}}; // TESTING PURPOSES ONLY
 
             if (checkLogin.status !== 'success') {
                 window.location.href = `/`;
@@ -51,7 +51,7 @@ export default class GamePage extends React.Component {
                 window.location.href = `/payment`;
             } else {
                 //this.setUser(checkLogin.user);
-                this.setState({user: checkLogin.user});
+                this.setState({user: checkLogin.user, game: {...this.state.game, page: 'home'}});
             }
 
         } catch(err) {

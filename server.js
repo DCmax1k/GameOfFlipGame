@@ -44,6 +44,50 @@ app.use('/game', gameRoute);
 const paymentRoute = require('./routes/payment');
 app.use('/payment', paymentRoute);
 
+// STRIPE PAYMENTS
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+app.get('/stripesecret', async (req, res) => {
+    const token = req.cookies['auth-token'];
+    if (token == null) return res.json({ status: 'error', message: 'No token provided' });
+    const decoded = await jwt.verify(token, process.env.TOKEN_SECRET)
+    const userID = decoded._id;
+    const intent = await stripe.paymentIntents.create({
+        amount: 99,
+        currency: 'usd',
+        automatic_payment_methods: {enabled: true},
+        metadata: {
+            userID: userID
+        }
+    });
+    res.json({ status: 'success', client_secret: intent.client_secret });
+});
+app.post('/stripe/webhook', express.raw({type: 'application/json'}), (request, response) => {
+    
+    const event = request.body;
+  
+    // Handle the event
+    switch (event.type) {
+      case 'payment_intent.succeeded':
+          console.log('payment succeeded');
+        const paymentIntent = event.data.object;
+        User.findOneAndUpdate({ _id: paymentIntent.metadata.userID }, { $set: { boughtApp: true } }, { new: true }, (err, user) => {
+            if (err) return console.log(err);
+        })
+
+        break;
+      // ... handle other event types
+      default:
+        console.log(`Unhandled event type ${event.type}`);
+    }
+  
+    // Return a 200 response to acknowledge receipt of the event
+    response.send();
+});
+app.get('/paymentsuccess', (req, res) => {
+    res.sendFile(__dirname + '/client/build/index.html');
+});
+
+
 app.listen(process.env.PORT || 3001, () => {
     console.log('Server listening on port 3001');
 });

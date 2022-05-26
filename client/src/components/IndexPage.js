@@ -28,7 +28,7 @@ function IndexPage() {
             <div className='logo'>
                 <img src='/images/logo.png' alt='logo' />
             </div>
-            <h1 className='bigText'>Flip <br /> Generation</h1>
+            <h1 className='bigText'>Flip <br /> Generator</h1>
             { connecting ? <div className='connecting'>Connecting...</div> : (
                 <div className='buttons'>
                     <Link to='/signup' className='button signup'>Sign up</Link>

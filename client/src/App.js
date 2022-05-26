@@ -5,7 +5,7 @@ import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import PaymentPage from './components/PaymentPage';
 import GamePage from './components/GamePage';
-
+import PaymentSuccess from './components/PaymentSuccess';
 import './App.css';
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/game" element={<GamePage />} />
+          <Route path="/paymentsuccess" element={<PaymentSuccess />} />
         </Routes>
       </div>
     </Router>
