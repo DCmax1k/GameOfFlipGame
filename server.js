@@ -87,11 +87,11 @@ app.get('/paymentsuccess', (req, res) => {
     res.sendFile(__dirname + '/client/build/index.html');
 });
 
-
-app.listen(process.env.PORT || 3001, () => {
-    console.log('Server listening on port 3001');
-});
-
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(() => {
     console.log('Connected to MongoDB');
+});
+
+
+app.listen(process.env.PORT || 80, () => {
+    console.log('Server listening on port 3001');
 });

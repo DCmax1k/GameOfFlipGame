@@ -42,7 +42,7 @@ class PaymentPage extends React.Component {
                     <img src='/images/logo.png' alt='logo' />
                 </div>
                 <h1 className='bigText'>Payment</h1>
-                {this.state.options.clientSecret && (
+                {this.state.options.clientSecret && this.state.user && (
                 <Elements options={this.state.options} stripe={stripePromise}>
                     <CheckoutForm />
                 </Elements>

@@ -30,6 +30,8 @@ function SignupPage() {
     const [emailActive, setEmailActive] = useState('');
     const [confirmActive, setConfirmActive] = useState('');
 
+    const [loginText, setLoginText] = useState('Submit');
+
     const changeUsername = e => {
         setUsername(e.target.value);
         e.target.value.length > 0 ? setUserActive('active') : setUserActive('');
@@ -51,8 +53,12 @@ function SignupPage() {
     const submit = async () => {
         if (!username || !password || !email || !confirmPass ) return alert('Please fill in all fields.');
         if (password !== confirmPass) return alert('Passwords do not match.');
+        setLoginText('Signing up...');
         const response = await sendData('/signup', {username, password, email});
-        if (response.status !== 'success') return alert(response.message);
+        if (response.status !== 'success') {
+            setLoginText('Submit');
+            return alert(response.message);
+        }
         if (response.status === 'success') return window.location.href = '/payment';
     }
 
@@ -84,7 +90,7 @@ function SignupPage() {
                 </div>
             </div>
             <div className='submit button' onClick={submit}>
-                Submit
+                {loginText}
             </div>
         </div>
     )

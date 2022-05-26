@@ -27,6 +27,8 @@ function LoginPage() {
     const [userActive, setUserActive] = useState('');
     const [passActive, setPassActive] = useState('');
 
+    const [loginText, setLoginText] = useState('Submit');
+
     const changeUsername = e => {
         setUsername(e.target.value);
         e.target.value.length > 0 ? setUserActive('active') : setUserActive('');
@@ -38,8 +40,12 @@ function LoginPage() {
 
     const submit = async () => {
         if (!username || !password) return alert('Please fill in all fields.');
+        setLoginText('Logging in...');
         const response = await sendData('/login', {username, password});
-        if (response.status !== 'success') return alert(response.message);
+        if (response.status !== 'success') {
+            setLoginText('Submit');
+            return alert(response.message);
+        }
         if (response.status === 'success') return window.location.href = `/${response.redirect}`;
     }
 
@@ -64,7 +70,7 @@ function LoginPage() {
                 </div>
             </div>
             <div className='submit button' onClick={submit}>
-                Submit
+                {loginText}
             </div>
         </div>
     )
