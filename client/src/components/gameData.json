@@ -1,0 +1,21 @@
+{
+    "gameModes": [
+        "Game of Flip",
+        "Add On",
+        "0123"
+    ],
+    "categories": [
+        "Ground",
+        "Trampoline",
+        "Airtrack",
+        "Super Tramp"
+    ],
+    "typesOfFlips": [
+        "Front Flip",
+        "Back Flip",
+        "Left Flip",
+        "Right Flip",
+        "180 Flip",
+        "360 Flip"
+    ]
+}

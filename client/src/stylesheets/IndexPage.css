@@ -1,0 +1,95 @@
+.IndexPage .logo {
+    height: 220px;
+}
+.IndexPage .logo img {
+    margin-top: 25px;
+    height: 100%;
+}
+
+.IndexPage .bigText {
+    margin-top: 15vw;
+    font-size: 15vw;
+}
+
+.IndexPage .buttons {
+    margin-top: 100px;
+    width: 100%;
+}
+.IndexPage .buttons .button {
+    height: 80px;
+    margin: 10px 20px;
+    font-size: 50px;
+}
+.IndexPage .buttons .signup {
+    color: #FFC27C;
+}   
+.IndexPage .buttons .login {
+    color: #E85C05;
+    background-color: #FFC27C;
+}
+
+.LoginPage .logo,
+.SignupPage .logo {
+    height: 150px;
+}
+.LoginPage .logo img,
+.SignupPage .logo img {
+    margin-top: 50px;
+}
+
+.LoginPage .bigText,
+.SignupPage .bigText {
+    margin-top: 60px;
+    font-size: 14vw;
+}
+
+
+.LoginPage .inputs {
+    margin-top: 50px;
+}
+.SignupPage .inputs {
+    margin-top: 20px;
+}
+.LoginPage .input,
+.SignupPage .input {
+    padding: 20px 20px;
+    margin: 10px auto;
+}
+.LoginPage .input > .placeholder,
+.SignupPage .input > .placeholder {
+    font-size: 30px;
+    font-weight: 800;
+}
+.LoginPage .input> .placeholder.active,
+.SignupPage .input> .placeholder.active {
+    font-size: 20px;
+    top: 13px;
+}
+.LoginPage .input > input,
+.SignupPage .input > input {
+    font-size: 30px;
+    font-size: 800;
+}
+.LoginPage .submit {
+    margin: 50px auto 0 auto;
+    padding: 10px 10px;
+    width: 80%;
+}
+.SignupPage .submit {
+    margin: 20px auto 0 auto;
+    padding: 10px 10px;
+    width: 80%;
+}
+
+.connecting {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99999;
+    font-size: 30px;
+    color: #fff;
+    background-color: rgb(59, 59, 59);
+    padding: 10px;
+    border-radius: 15px;
+}

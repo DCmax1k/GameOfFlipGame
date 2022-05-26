@@ -1,0 +1,92 @@
+.GamePage .logo {
+    height: 220px;
+}
+.GamePage .logo img {
+    margin-top: 25px;
+    height: 100%;
+}
+
+.GamePage .bigText {
+    margin-top: 15vw;
+    font-size: 15vw;
+}
+
+.GameHome .buttons {
+    margin-top: 50px;
+}
+.GameHome .buttons > .button {
+    margin: 10px auto;
+    padding: 20px 30px;
+}
+
+.EnterPlayerNames .logo,
+.SelectMode .logo {
+    height: 150px;
+}
+.EnterPlayerNames .bigText,
+.SelectMode .bigText {
+    font-size: 35px;
+    margin-top: 30px;
+    line-height: 40px;
+}
+.EnterPlayerNames .inputs {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    max-height: calc(100vh - 400px);
+    overflow: scroll;
+}
+.EnterPlayerNames .inputs > .playerInput {
+    margin-top: 10px;
+    position: relative;
+}
+.EnterPlayerNames .inputs > .playerInput > input {
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #E85C05;
+    outline: none;
+    border: 3px solid white;
+    border-radius: 999999px;
+    font-size: 30px;
+    padding: 10px 50px;
+}
+.EnterPlayerNames .inputs > .playerInput > .removePlayer {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    font-weight: 800;
+}
+.EnterPlayerNames .addPlayer > .button {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    padding: 10px 40px;
+
+}
+.EnterPlayerNames .bottomButtons,
+.SelectMode .bottomButtons {
+    width: 90%;
+    margin: 15px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.EnterPlayerNames .bottomButtons > .button,
+.SelectMode .bottomButtons > .button {
+    padding: 5px 20px;
+}
+
+.SelectMode .modes {
+    width: 95%;
+    margin: 20px auto;
+}
+.SelectMode .modes > .modeOption > button {
+    width: 100%;
+    margin: 10px 0;
+    height: 80px;
+}
