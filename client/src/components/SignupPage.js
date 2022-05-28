@@ -30,6 +30,9 @@ function SignupPage() {
     const [emailActive, setEmailActive] = useState('');
     const [confirmActive, setConfirmActive] = useState('');
 
+    const [passwordType, setPasswordType] = useState('password');
+    const [confirmType, setConfirmType] = useState('password');
+
     const [loginText, setLoginText] = useState('Submit');
 
     const changeUsername = e => {
@@ -62,6 +65,13 @@ function SignupPage() {
         if (response.status === 'success') return window.location.href = '/payment';
     }
 
+    const togglePassword = () => {
+        passwordType === 'password' ? setPasswordType('text') : setPasswordType('password');
+    }
+    const toggleConfirm = () => {
+        confirmType === 'password' ? setConfirmType('text') : setConfirmType('password');
+    }
+
     return (
         <div className='SignupPage'>
             <Link to={'/'} className="backArrow" >
@@ -81,12 +91,18 @@ function SignupPage() {
                     <input type='email' onChange={changeEmail} />
                 </div>
                 <div className='input'>
+                    <span className="eye" onClick={togglePassword}>
+                        <i class="fa-solid fa-eye"></i>
+                    </span>
                     <span className={`placeholder ${passActive}`}>Password</span>
-                    <input type='password' onChange={changePassword} />
+                    <input type={passwordType} onChange={changePassword} />
                 </div>
                 <div className='input'>
+                    <span className="eye" onClick={toggleConfirm}>
+                        <i class="fa-solid fa-eye"></i>
+                    </span>
                     <span className={`placeholder ${confirmActive}`}>Confirm Password</span>
-                    <input type='password' onChange={changeConfirmPass} />
+                    <input type={confirmType} onChange={changeConfirmPass} />
                 </div>
             </div>
             <div className='submit button' onClick={submit}>

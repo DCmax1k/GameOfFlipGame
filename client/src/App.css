@@ -25,6 +25,7 @@
   height: 100%;
   object-fit: contain;
   object-position: center;
+  animation: spinCounterClockwise 10s infinite linear;
 }
 
 button.disabled {

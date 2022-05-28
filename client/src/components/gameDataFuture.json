@@ -53,7 +53,7 @@
 
         }
     },
-    "typesOfFlips": [
+    "warmupFlips": [
         "Front Flip",
         "Back Flip",
         "Left Flip",

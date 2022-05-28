@@ -4,6 +4,15 @@
 .IndexPage .logo img {
     margin-top: 25px;
     height: 100%;
+    
+}
+@keyframes spinCounterClockwise {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
 }
 
 .IndexPage .bigText {
@@ -70,6 +79,17 @@
     font-size: 30px;
     font-size: 800;
 }
+
+.SignupPage .input > .eye,
+.LoginPage .input > .eye {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    font-size: 20px;
+    color: white;
+}
+
 .LoginPage .submit {
     margin: 50px auto 0 auto;
     padding: 10px 10px;

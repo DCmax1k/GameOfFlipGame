@@ -27,6 +27,8 @@ function LoginPage() {
     const [userActive, setUserActive] = useState('');
     const [passActive, setPassActive] = useState('');
 
+    const [passwordType, setPasswordType] = useState('password');
+
     const [loginText, setLoginText] = useState('Submit');
 
     const changeUsername = e => {
@@ -49,6 +51,9 @@ function LoginPage() {
         if (response.status === 'success') return window.location.href = `/${response.redirect}`;
     }
 
+    const togglePassword = () => {
+        passwordType === 'password' ? setPasswordType('text') : setPasswordType('password');
+    }
 
     return (
         <div className='LoginPage'>
@@ -65,8 +70,11 @@ function LoginPage() {
                     <input type='text' onChange={changeUsername} />
                 </div>
                 <div className='input'>
+                    <span className="eye" onClick={togglePassword}>
+                        <i class="fa-solid fa-eye"></i>
+                    </span>
                     <span className={`placeholder ${passActive}`}>Password</span>
-                    <input type='password' onChange={changePassword} />
+                    <input type={passwordType} onChange={changePassword} />
                 </div>
             </div>
             <div className='submit button' onClick={submit}>
