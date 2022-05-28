@@ -45,8 +45,8 @@ export default class GamePage extends React.Component {
 
     async componentDidMount() {
         try {
-            const checkLogin = await sendData('/checklogin', {});
-            //const checkLogin = {status: 'success', redirect: 'game', user: {username: 'test'}}; // TESTING PURPOSES ONLY
+            //const checkLogin = await sendData('/checklogin', {});
+            const checkLogin = {status: 'success', redirect: 'game', user: {username: 'test'}}; // TESTING PURPOSES ONLY
 
             if (checkLogin.status !== 'success') {
                 window.location.href = `/`;

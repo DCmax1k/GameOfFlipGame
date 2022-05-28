@@ -1,0 +1,64 @@
+{
+    "gameModes": [
+        "Game of Flip",
+        "Add On",
+        "0123"
+    ],
+    "categories": {
+        "Ground": {
+            "EasyFlips": {
+
+            },
+            "MediumFlips": {
+
+            },
+            "HardFlips": {
+                
+            }
+
+        },
+        "Trampoline": {
+            "EasyFlips": {
+
+            },
+            "MediumFlips": {
+
+            },
+            "HardFlips": {
+
+            }
+        }
+        ,
+        "Airtrack": {
+            "EasyFlips": {
+
+            },
+            "MediumFlips": {
+
+            },
+            "HardFlips": {
+
+            }
+        },
+        "Super Tramp": {
+            "EasyFlips": {
+
+            },
+            "MediumFlips": {
+
+            },
+            "HardFlips": {
+
+            }
+
+        }
+    },
+    "typesOfFlips": [
+        "Front Flip",
+        "Back Flip",
+        "Left Flip",
+        "Right Flip",
+        "180 Flip",
+        "360 Flip"
+    ]
+}

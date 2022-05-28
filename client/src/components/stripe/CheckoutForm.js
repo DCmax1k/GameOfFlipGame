@@ -5,7 +5,7 @@ import {
   useElements
 } from "@stripe/react-stripe-js";
 
-const HOST = 'http://localhost:3001'
+const HOST = window.location.origin;
 
 export default function CheckoutForm() {
   const stripe = useStripe();
