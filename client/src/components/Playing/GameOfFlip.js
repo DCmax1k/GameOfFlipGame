@@ -16,6 +16,7 @@ class GameOfFlip extends React.Component {
             flipsUsed: [],
             playingSuccessAni: false,
             playingFailAni: false,
+            winner: '',
         }
         this.nextPlayer = this.nextPlayer.bind(this);
         this.nextRound = this.nextRound.bind(this);
@@ -26,6 +27,8 @@ class GameOfFlip extends React.Component {
         this.exitGame = this.exitGame.bind(this);
         this.showScores = this.showScores.bind(this);
         this.endGame = this.endGame.bind(this);
+        this.showVictoryMessage = this.showVictoryMessage.bind(this);
+        this.resetGame = this.resetGame.bind(this);
     }
 
     componentDidMount() {
@@ -55,6 +58,7 @@ class GameOfFlip extends React.Component {
             flipsList: flipsList,
             flipsUsed: [],
             currentFlip: firstFlip,
+            winner: '',
         });
     }
 
@@ -175,13 +179,25 @@ class GameOfFlip extends React.Component {
         // SHOW SCORES DIV HERE
     }
     endGame() {
-        alert(this.state.players[0].name + ' wins!');
-        this.resetGame();
+        this.showVictoryMessage(this.state.players[0].name);
+    }
+
+    showVictoryMessage(winner) {
+        this.setState({
+            winner: winner,
+        });
     }
 
     render() {
         return (
             <div className='GameOfFlip'>
+
+                {/* CROWN VICTORY */}
+                <div className={`victoryMessage ${this.state.winner?'active':''}`}>
+                    <i className="fa-solid fa-crown"></i>
+                    <h1>{this.state.winner}</h1>
+                    <button onClick={this.resetGame}>Play again</button>
+                </div>
 
                 {/* HEADER */}
                 <div className='header'>

@@ -75,7 +75,7 @@ function SignupPage() {
     return (
         <div className='SignupPage'>
             <Link to={'/'} className="backArrow" >
-                <i class="fa-solid fa-arrow-left"></i> Back
+                <i className="fa-solid fa-arrow-left"></i> Back
             </Link>
             <div className='logo'>
                 <img src='/images/logo.png' alt='logo' />
@@ -92,14 +92,14 @@ function SignupPage() {
                 </div>
                 <div className='input'>
                     <span className="eye" onClick={togglePassword}>
-                        <i class="fa-solid fa-eye"></i>
+                        <i className="fa-solid fa-eye"></i>
                     </span>
                     <span className={`placeholder ${passActive}`}>Password</span>
                     <input type={passwordType} onChange={changePassword} />
                 </div>
                 <div className='input'>
                     <span className="eye" onClick={toggleConfirm}>
-                        <i class="fa-solid fa-eye"></i>
+                        <i className="fa-solid fa-eye"></i>
                     </span>
                     <span className={`placeholder ${confirmActive}`}>Confirm Password</span>
                     <input type={confirmType} onChange={changeConfirmPass} />

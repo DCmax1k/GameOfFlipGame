@@ -151,3 +151,47 @@ button.vibrate {
         transform: rotate(0deg);
     }
 }
+.GameOfFlip .victoryMessage {
+    z-index: 2;
+    position: absolute;
+    height: 400px;
+    width: 100%;
+    top: 300px;
+    transform: scale(0);
+
+    transition: transform 0.5s ease-in-out;
+}
+.GameOfFlip .victoryMessage.active {
+    transform: scale(1);
+}
+.GameOfFlip .victoryMessage > h1 {
+    font-size: 35px;
+    color: orange;
+    text-shadow: 2px 2px 2px black;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+.GameOfFlip .victoryMessage > i {
+    color: #e4ba00;
+    font-size: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.GameOfFlip .victoryMessage > button {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid white;
+    outline: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 99999px;
+    background-color: #e4ba00;
+    padding: 5px 20px;
+}
