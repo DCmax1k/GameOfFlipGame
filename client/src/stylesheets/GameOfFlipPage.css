@@ -40,6 +40,7 @@
     background-color: rgba(255, 255, 255, 0.25);
     border-top: 1px solid white;
     border-bottom: 1px solid white;
+    z-index: 1;
 }
 .GameOfFlip .currentPlayer > h2 {
     font-size: 30px;
@@ -100,9 +101,11 @@
 
 .GameOfFlip .flip > img {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 60px;
     object-fit: contain;
     padding: 0 50px;
+    animation: spinCounterClockwise 10s infinite linear;
+    margin-bottom: 80px;
 }
 .GameOfFlip .flip > h1 {
     margin-top: 10px;

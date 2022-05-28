@@ -27,6 +27,14 @@
   object-position: center;
   animation: spinCounterClockwise 10s infinite linear;
 }
+@keyframes spinCounterClockwise {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(-360deg);
+  }
+}
 
 button.disabled {
   pointer-events: none;
@@ -93,9 +101,17 @@ button.disabled {
 }
 
 footer {
-  position: fixed;
-  bottom: 20px;
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  font-size: 20px !important;
-  line-height: 0 !important;
+  font-size: 20px;
+  color: white;
+  font-weight: 800;
+  text-align: center;
+  text-shadow: 2px 2px 2px black;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
