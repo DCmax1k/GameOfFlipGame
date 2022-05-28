@@ -21,7 +21,7 @@ function SelectMode(props) {
             {props.modeOptions.map((mode, index) => {
                 return (
                     <div className='modeOption' key={index}>
-                        <button className='modeName button' onClick={() => setGamemode(mode) }>{mode}</button>
+                        <button className={`modeName button ${mode!=='Game of Flip'?'disabled':null}`} onClick={() => setGamemode(mode) }>{mode}</button>
                     </div>
                 )})
             }

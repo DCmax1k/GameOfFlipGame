@@ -1,0 +1,149 @@
+.GameOfFlip .header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.GameOfFlip .header > .title > h1 {
+    font-size: 40px;
+    margin-top: 0;
+}
+.GameOfFlip .header .stackedBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 100%;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.GameOfFlip .header .stackedBtn > i {
+    font-size: 30px;
+    height: 100%;
+    width: 80px;
+}
+.GameOfFlip .header .stackedBtn > span {
+    font-size: 20px;
+}
+
+.GameOfFlip .currentPlayer {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.GameOfFlip .currentPlayer > h2 {
+    font-size: 30px;
+    margin-top: 0;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.GameOfFlip .currentPlayer > .letters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.GameOfFlip .currentPlayer > .letters > span {
+    font-size: 30px;
+    margin: 0 5vw;
+    color: white;
+    font-weight: 800;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 99999px;
+    border: 3px solid white;
+    background-color: rgba(255, 255, 255, 0.25);
+
+    transition: all 0.3s ease;
+}
+.GameOfFlip .currentPlayer > .letters > span.fill {
+    color: #E85C05;
+    border: 3px solid #E85C05;
+    background-color: #FFA238;
+    box-shadow: 0 0 3px 4px black;
+}
+
+.GameOfFlip .currentPlayer > .buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    margin-top: 10px;
+}
+.GameOfFlip .currentPlayer > .buttons > button {
+    height: 100%;
+    width: 45%;
+    border-radius: 999999px;
+}
+.GameOfFlip .currentPlayer > .buttons > button.success {
+    background-color: #42A632;
+}
+.GameOfFlip .currentPlayer > .buttons > button.failure {
+    background-color: #B01D1D;
+}
+
+.GameOfFlip .flip > img {
+    width: 100%;
+    margin-top: 50px;
+    object-fit: contain;
+    padding: 0 50px;
+}
+.GameOfFlip .flip > h1 {
+    margin-top: 10px;
+}
+
+button.bounce {
+    animation: bounce 0.5s ease-in-out forwards;
+}
+@keyframes bounce {
+    0% {
+        transform: scale(1,1);
+    }
+    20% {
+        transform: scale(1.1,.9);
+    }
+    60% {
+        transform: scale(.9,1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+button.vibrate {
+    animation: vibrate 0.5s ease-in-out forwards;
+}
+@keyframes vibrate {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(5deg);
+    }
+    40% {
+        transform: rotate(-5deg);
+    }
+    60% {
+        transform: rotate(5deg);
+    }
+    80% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}

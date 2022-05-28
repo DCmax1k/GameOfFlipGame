@@ -5,12 +5,18 @@ import '../stylesheets/GamePage.css';
 import gameData from './gameData.json';
 
 import GameHome from './GameHome';
-// import Game from '../Classes/Game';
-import Player from '../Classes/Player';
 import Warmup from './Warmup';
 import EnterPlayerNames from './EnterPlayerNames';
 import SelectMode from './SelectMode';
 import Playing from './Playing';
+
+class Player {
+    constructor(name, index)  {
+        this.name = name;
+        this.letters = []; //['F', 'L', 'I', 'P'];
+        this.index = index;
+    }
+}
 
 export default class GamePage extends React.Component {
 
@@ -21,11 +27,8 @@ export default class GamePage extends React.Component {
                 page: '', // home, enterPlayerNames, selectMode, playing
                 players: [],
                 flips: gameData.typesOfFlips,
-                gamemode: '', // "gameOfFlip", "addOn", "numbers"
+                gamemode: '', // "Game of Flip", "Add On", "numbers"
                 category: '',
-                currentPlayer: '',
-                currentPlayerIndex: 0,
-                currentRound: 1,
             },
             user: {},
         }
@@ -65,7 +68,7 @@ export default class GamePage extends React.Component {
         );
     }
     playWithFriends() {
-        const player = new Player(this.state.user.username);
+        const player = new Player(this.state.user.username, 0);
         this.setState({
             game: {
             ...this.state.game, players: [player], page: 'enterPlayerNames'

@@ -7,7 +7,7 @@ import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import CheckoutForm from './stripe/CheckoutForm';
 
-const stripePromise = loadStripe(StripePublicKey.testKey);
+const stripePromise = loadStripe(StripePublicKey.key);
 
 class PaymentPage extends React.Component {
     constructor() {

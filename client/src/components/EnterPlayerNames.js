@@ -1,10 +1,16 @@
 import React from 'react';
-import Player from '../Classes/Player';
+class Player {
+    constructor(name, index)  {
+        this.name = name;
+        this.letters = []; //['F', 'L', 'I', 'P'];
+        this.index = index;
+    }
+}
 
 function EnterPlayerNames(props) {
 
     function addPlayer(e) {
-        const player = new Player('');
+        const player = new Player('', props.game.players[props.game.players.length - 1].index + 1);
         props.addPlayer(player);
         setTimeout(() => {
             const inputs = document.querySelectorAll('.playerInput > input');
@@ -34,6 +40,8 @@ function EnterPlayerNames(props) {
         props.setPage('home');
     }
     function next() {
+        const players = props.game.players.filter(p => p.name !== '');
+        if (players.length <= 1) return alert('You need at least 2 players to play');
         props.setPage('selectMode');
     }
 
