@@ -2,12 +2,14 @@ import React from 'react';
 // eslint-disable-next-line
 import sendData from './sendData';
 import '../stylesheets/GamePage.css';
-import gameData from './gameData.json';
+//import gameData from './gameData.json';
+import gameData from './gameDataFuture.json';
 
 import GameHome from './GameHome';
 import Warmup from './Warmup';
 import EnterPlayerNames from './EnterPlayerNames';
 import SelectMode from './SelectMode';
+import SelectOptions from './SelectOptions';
 import Playing from './Playing';
 
 class Player {
@@ -26,9 +28,10 @@ export default class GamePage extends React.Component {
             game: {
                 page: '', // home, enterPlayerNames, selectMode, playing
                 players: [],
-                flips: gameData.typesOfFlips,
+                flips: [],
                 gamemode: '', // "Game of Flip", "Add On", "numbers"
-                category: '',
+                category: '', // ground, trampoline, airtrack, superTramp
+                difficulty: '', // easy, medium, hard, pro 
             },
             user: {},
         }
@@ -40,6 +43,8 @@ export default class GamePage extends React.Component {
         this.editPlayer = this.editPlayer.bind(this);
         this.setPage = this.setPage.bind(this);
         this.setGamemode = this.setGamemode.bind(this);
+        this.setCategory = this.setCategory.bind(this);
+        this.setDifficulty = this.setDifficulty.bind(this);
 
     }
 
@@ -112,9 +117,27 @@ export default class GamePage extends React.Component {
     setGamemode(gamemode) {
         this.setState({
             game: {
-                ...this.state.game, gamemode: gamemode, page: 'playing',
+                ...this.state.game, gamemode: gamemode, page: 'selectOptions',
             }
         });
+    }
+    setCategory(category) {
+        this.setState({
+            game: {
+                ...this.state.game, category: category,
+            }
+        });
+    }
+    setDifficulty(difficulty) {
+        const flips = this.getFlips(this.state.game.category, difficulty);
+        this.setState({
+            game: {
+                ...this.state.game, difficulty: difficulty, page: 'playing', flips: flips,
+            }
+        });
+    }
+    getFlips(cg, diff) {
+        return gameData.categories[cg][diff];
     }
 
     render() {
@@ -149,6 +172,16 @@ export default class GamePage extends React.Component {
                         setPage={this.setPage}
                         modeOptions={gameData.gameModes}
                         setGamemode={this.setGamemode}
+                    />
+                ) : null
+                }
+                { this.state.game.page === 'selectOptions' ? (
+                    <SelectOptions
+                        game={this.state.game}
+                        user={this.state.user}
+                        setPage={this.setPage}
+                        setCategory={this.setCategory}
+                        setDifficulty={this.setDifficulty}
                     />
                 ) : null
                 }

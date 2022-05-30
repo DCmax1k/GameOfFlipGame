@@ -37,9 +37,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.25);
+    /* background-color: rgba(255, 255, 255, 0.25); */
     border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    /* border-bottom: 1px solid white; */
     z-index: 1;
 }
 .GameOfFlip .currentPlayer > h2 {
@@ -101,14 +101,17 @@
 
 .GameOfFlip .flip > img {
     width: 100%;
-    margin-top: 60px;
+    height: 35vw;
+    margin: 60px 0;
+    transform: translateX(-50%);
     object-fit: contain;
     padding: 0 50px;
     animation: spinCounterClockwise 10s infinite linear;
-    margin-bottom: 80px;
 }
 .GameOfFlip .flip > h1 {
     margin-top: 10px;
+    font-size: 12vw;
+    padding: 10px;
 }
 
 button.bounce {
@@ -194,4 +197,89 @@ button.vibrate {
     border-radius: 99999px;
     background-color: #e4ba00;
     padding: 5px 20px;
+}
+
+.GameOfFlip .showScores.active {
+    transform: scale(1);
+}
+.GameOfFlip .showScores {
+    z-index: 3;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    background-color: rgba(56, 56, 56, 0.904);
+    border-radius: 20px;
+    border: 5px solid white;
+    padding: 10px;
+}
+.GameOfFlip .showScores > .exitMenu {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 30px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.GameOfFlip .showScores > .bigText {
+    font-size: 35px;
+    margin-top: 0;
+    line-height: 35px;
+    margin-bottom: 20px;
+}
+
+.GameOfFlip .showScores .player {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.24);
+    border-radius: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    color: white}
+
+.GameOFFlip .showScores .players {
+    max-width: calc(100% - 200px);
+    overflow: scroll;
+}
+
+.GameOfFlip .showScores .player .bigText {
+    margin-top: 0;
+    font-size: 25px;
+    line-height: 25px;
+}
+
+.GameOfFlip .showScores .player .playerLetters {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.GameOfFlip .showScores .player .playerLetters > span {
+    font-size: 15px;
+    height: 25px;
+    width: 25px;
+    background-color: grey;
+    border-radius: 99999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+}
+
+.GameOfFlip .showScores .player .playerLetters > span.fill {
+    color: #E85C05;
+    border: 1px solid #E85C05;
+    background-color: #FFA238;
+    box-shadow: 0 0 3px 4px black;
 }

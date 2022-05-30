@@ -17,6 +17,7 @@ class GameOfFlip extends React.Component {
             playingSuccessAni: false,
             playingFailAni: false,
             winner: '',
+            scoresMenuActive: false,
         }
         this.nextPlayer = this.nextPlayer.bind(this);
         this.nextRound = this.nextRound.bind(this);
@@ -25,7 +26,7 @@ class GameOfFlip extends React.Component {
         this.failFlip = this.failFlip.bind(this);
         this.addLetter = this.addLetter.bind(this);
         this.exitGame = this.exitGame.bind(this);
-        this.showScores = this.showScores.bind(this);
+        this.toggleScoresMenu = this.toggleScoresMenu.bind(this);
         this.endGame = this.endGame.bind(this);
         this.showVictoryMessage = this.showVictoryMessage.bind(this);
         this.resetGame = this.resetGame.bind(this);
@@ -44,7 +45,12 @@ class GameOfFlip extends React.Component {
         const flipsUsed = this.state.flipsUsed;
         const flipsList = [...oldFlipsList, ...flipsUsed]
 
-        const firstFlip = this.pickFlip();
+        const firstFlip = flipsList.splice(Math.floor(Math.random() * flipsList.length), 1)[0];
+        flipsUsed.push(firstFlip);
+        flipsList.splice(flipsList.indexOf(firstFlip), 1);
+
+        console.log(flipsList);
+        console.log(flipsUsed);
 
         this.setState({
             players: players.map(player => {
@@ -59,6 +65,7 @@ class GameOfFlip extends React.Component {
             flipsUsed: [],
             currentFlip: firstFlip,
             winner: '',
+            scoresMenuActive: false,
         });
     }
 
@@ -84,7 +91,7 @@ class GameOfFlip extends React.Component {
     pickFlip() {
         const flips = this.state.flipsList;
         const flipsUsed = this.state.flipsUsed;
-        const flip = flips.splice(Math.floor(Math.random() * flips.length), 1);
+        const flip = flips.splice(Math.floor(Math.random() * flips.length), 1)[0];
         flipsUsed.push(flip);
         if (flips.length === 0) {
             this.setState({
@@ -98,6 +105,7 @@ class GameOfFlip extends React.Component {
 
             })
         }
+        console.log('flip', flip);
         return flip;
     }
 
@@ -171,12 +179,8 @@ class GameOfFlip extends React.Component {
     exitGame() {
         const confirming = window.confirm('Are you sure you want to exit the game?');
         if (confirming) {
-            this.resetGame();
             this.props.setPage('selectMode');
         }
-    }
-    showScores() {
-        // SHOW SCORES DIV HERE
     }
     endGame() {
         this.showVictoryMessage(this.state.players[0].name);
@@ -188,9 +192,36 @@ class GameOfFlip extends React.Component {
         });
     }
 
+    toggleScoresMenu() {
+        this.setState({
+            scoresMenuActive: !this.state.scoresMenuActive,
+        });
+    }
+
     render() {
         return (
             <div className='GameOfFlip'>
+
+                {/* SCORES MENU */}
+                <div className={`showScores ${this.state.scoresMenuActive?'active':''}`}>
+                    <button onClick={this.toggleScoresMenu} className='exitMenu'>x</button>
+                    <div className='bigText'>All players <br /> scores:</div>
+                    <div className='players'>
+                        {this.state.players.map((player, index) => {
+                            return (
+                                <div className='player' key={index}>
+                                    <div className='playerName bigText'>{player.name}</div>
+                                    <div className='playerLetters'>
+                                        <span className={player.letters.length>=1?'fill':''} >F</span>
+                                        <span className={player.letters.length>=2?'fill':''} >L</span>
+                                        <span className={player.letters.length>=3?'fill':''} >I</span>
+                                        <span className={player.letters.length>=4?'fill':''} >P</span>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
 
                 {/* CROWN VICTORY */}
                 <div className={`victoryMessage ${this.state.winner?'active':''}`}>
@@ -211,7 +242,7 @@ class GameOfFlip extends React.Component {
                         <h1 className='bigText'>Round {this.state.currentRound}</h1>
                     </div>
                     <div className='scoresBtn'>
-                        <button className='stackedBtn' onClick={this.showScores}>
+                        <button className='stackedBtn' onClick={this.toggleScoresMenu}>
                             <i className="fa-solid fa-ellipsis"></i>
                             <span>Scores</span>
                         </button>

@@ -1,0 +1,82 @@
+
+.SelectOptions .bigText {
+    margin-top: 20px;
+    font-size: 12vw;
+}
+
+.SelectOptions .logo {
+    height: 150px;
+}
+
+.SelectOptions .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+    width: 100%;
+    margin-top: 0px;
+    height: 300px;
+    grid-gap: 10px;
+}
+
+.SelectOptions .modeButton {
+    height: 130px;
+    width: 130px;
+    background-color: orange;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid white;
+    margin: auto;
+}
+
+.SelectOptions .modeButton > button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+}
+
+.SelectOptions .selectDiff.active {
+    left: 0;
+}
+.SelectOptions .selectDiff {
+    position: absolute;
+    top: 20px;
+    left: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(56, 56, 56, 0.904);
+    border-radius: 20px;
+    border: 5px solid white;
+    transition: left 0.3s ease;
+}
+
+.SelectOptions .selectDiff .buttons > button {
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-size: 25px;
+}
+
+.SelectOptions .back.button {
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 10px 20px;
+}
+
+.SelectOptions .selectDiff > .exitMenu {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+}

@@ -25,19 +25,14 @@ function Warmup(props) {
             </div>
 
             <div className="buttons">
-                <div>
-                    <div className="modeButton">
-                        <button>Garden Tramp</button>
-                    </div>
-                </div>
-                <div>
-                    
+                <div className="modeButton">
+                    <button>Garden Tramp</button>
                 </div>
                 <div className="modeButton">
                     <button>Super Tramp</button>
                 </div>
                 <div className="modeButton">
-                    <button>Grass</button>
+                    <button>Ground</button>
                 </div>
                 <div className="modeButton">
                     <button>Air Track</button>
@@ -46,5 +41,20 @@ function Warmup(props) {
         </div>
     )
 }
+
+// FOR ADDING FLIPS TO LISTS
+/*
+
+function formatFlips(flips) {
+    const arr = flips.split('\n');
+    return arr.map(el => {
+        let temp = el.split('');
+        temp.unshift('"');
+        temp.push('"');
+        return temp.join('');
+    }).join(', ');
+}
+
+*/
 
 export default Warmup;

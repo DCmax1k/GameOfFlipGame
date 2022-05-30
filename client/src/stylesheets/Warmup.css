@@ -1,4 +1,4 @@
-.header {
+.Warmup .header {
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -6,7 +6,7 @@
     padding: 10px;
 }
 
-.header > .exit > button {
+.Warmup .header > .exit > button {
     height: 100%;
     outline: none;
     border: none;
@@ -20,17 +20,27 @@
     width: 80px;
 }
 
-.header > .title > .bigText {
+.Warmup .header > .title > .bigText {
     margin-top: 0;
     font-size: 30px;
     height: 100%;
 }
 
-.header > .placeholder {
+.Warmup .header > .placeholder {
     width: 80px;
 }
 
-.modeButton {
+.Warmup .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 30px;
+    height: 400px;
+}
+
+.Warmup .modeButton {
     height: 130px;
     width: 130px;
     background-color: orange;
@@ -39,9 +49,10 @@
     justify-content: center;
     align-items: center;
     border: 3px solid white;
+    margin: auto;
 }
 
-.modeButton > button {
+.Warmup .modeButton > button {
     outline: none;
     border: none;
     background-color: transparent;
