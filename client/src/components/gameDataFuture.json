@@ -7,16 +7,16 @@
     "categories": {
         "ground": {
             "easy": [
-                "Front flip", "Side flip", "Back flip", "Front 180", "Kaboom", "Backflip to Front flip", "Backflip to Side flip", "Front Flip x2", "Back Flip x2", "Side Flip x2", "Backflip to Front 180", "Front 180 to Backflip", "Side Flip Backflip", "Arabian", "Standing Front flip", "Standing Backflip", "Knee Frontflip", "Knee Sideflip", "Cheat Gainer", "Tunnel Flip", "Pike Backflip", "Layout Backflip", "Flashkick", "Layout Frontflip", "Pike Frontflip", "Pullover", "Loser", "A-Twist", "Russian Front Flip"
+                
             ],
             "medium": [
-                "Gainer", "Gainer Full", "Inward Front", "Inward Side", "Backfull", "Cork", "Btwist", "Cody", "Front Full", "Rudy", "Rodeo Backflip", "Backflip to Knee Frontflip", "Backflip to Stomach", "Frontflip to Kaboom", "Kaboom x2", "Backfull x2", "Backflip x3", "Frontflip x3", "Sideflip x3", "Arabian Front 180", "Backflip to Frontflip to Sideflip", "Sideflip to Backflip to Frontflip", "Frontflip to Backflip", "Frontflip to Backflip to Sideflip", "Front 180 x3", "Backflip 1.5 twists", "Backflip to Stomach Cody", "Webster x2", "Backflip to Kaboom", "Full-Down", "Ballout", "Standing Knee Frontflip", "Stall Backflip", "Arabian-Unhalf"
+                
             ],
             "hard": [
-                "Double Arabian", "Double Kaboom", "Double Cody", "Double Front Flip", "Double Back Flip", "Double Side Flip", "Double Full", "Randy", "Front Double Full", "Double Cork", "Full-Up", "Btwist Cork", "Double B-Twist", "Zach", "Ballout x 2", "Backflip x 5", "Front 180 to Arabian", "Cody Full", "Cody Full-Down", "Kaboom Full", "Knee Backflip", "Fliffus", "Dark-Side Side Flip", "Dark-Side Back Full", "Dark-Side Cork", "Dark-Side Front 180", "Dark-Side Rudy", "Full to Double Full", "Full x3", "Rudy x2", "Kaboom to Cody", "Cody to Kaboom", "Cody x2", "Swing Through Cork", "Full 1.5 Twists Rudy"
+                
             ],
             "pro": [
-                "Double Full x2", "Crock", "Stall-In", "Coke-A-Cola", "Triple Full", "Adolf", "Full-In", "Full-Out", "Handstand Kong Gainer", "Half-In Half-Out", "Full-In Full-Out", "Knee Double Frontflip", "Knee Full", "Zach x2", "Triple Backflip", "Triple Frontflip", "Triple Sideflip", "Triffus", "Standing Dub Back", "Dub Back x2", "Dub Front x2", "Dub Side x2", "Cody Double Full", "Double Cheat Gainer"
+                
             ]
 
         },
@@ -37,41 +37,33 @@
         ,
         "airtrack": {
             "easy": [
-                "Front flip", "Side flip", "Back flip", "Front 180", "Kaboom", "Backflip to Front flip", "Backflip to Side flip", "Front Flip x2", "Back Flip x2", "Side Flip x2", "Backflip to Front 180", "Front 180 to Backflip", "Side Flip Backflip", "Arabian", "Standing Front flip", "Standing Backflip", "Knee Frontflip", "Knee Sideflip", "Cheat Gainer", "Tunnel Flip", "Pike Backflip", "Layout Backflip", "Flashkick", "Layout Frontflip", "Pike Frontflip", "Pullover", "Loser", "A-Twist", "Russian Front Flip"
+                
             ],
             "medium": [
-                "Gainer", "Gainer Full", "Inward Front", "Inward Side", "Backfull", "Cork", "Btwist", "Cody", "Front Full", "Rudy", "Rodeo Backflip", "Backflip to Knee Frontflip", "Backflip to Stomach", "Frontflip to Kaboom", "Kaboom x2", "Backfull x2", "Backflip x3", "Frontflip x3", "Sideflip x3", "Arabian Front 180", "Backflip to Frontflip to Sideflip", "Sideflip to Backflip to Frontflip", "Frontflip to Backflip", "Frontflip to Backflip to Sideflip", "Front 180 x3", "Backflip 1.5 twists", "Backflip to Stomach Cody", "Webster x2", "Backflip to Kaboom", "Full-Down", "Ballout", "Standing Knee Frontflip", "Stall Backflip", "Arabian-Unhalf"
+                
             ],
             "hard": [
-                "Double Arabian", "Double Kaboom", "Double Cody", "Double Front Flip", "Double Back Flip", "Double Side Flip", "Double Full", "Randy", "Front Double Full", "Double Cork", "Full-Up", "Btwist Cork", "Double B-Twist", "Zach", "Ballout x 2", "Backflip x 5", "Front 180 to Arabian", "Cody Full", "Cody Full-Down", "Kaboom Full", "Knee Backflip", "Fliffus", "Dark-Side Side Flip", "Dark-Side Back Full", "Dark-Side Cork", "Dark-Side Front 180", "Dark-Side Rudy", "Full to Double Full", "Full x3", "Rudy x2", "Kaboom to Cody", "Cody to Kaboom", "Cody x2", "Swing Through Cork", "Full 1.5 Twists Rudy"
+                
             ],
             "pro": [
-                "Double Full x2", "Crock", "Stall-In", "Coke-A-Cola", "Triple Full", "Adolf", "Full-In", "Full-Out", "Handstand Kong Gainer", "Half-In Half-Out", "Full-In Full-Out", "Knee Double Frontflip", "Knee Full", "Zach x2", "Triple Backflip", "Triple Frontflip", "Triple Sideflip", "Triffus", "Standing Dub Back", "Dub Back x2", "Dub Front x2", "Dub Side x2", "Cody Double Full", "Double Cheat Gainer"
+                
             ]
         },
         "superTramp": {
             "easy": [
-                "Front flip", "Side flip", "Back flip", "Front 180", "Kaboom", "Backflip to Front flip", "Backflip to Side flip", "Front Flip x2", "Back Flip x2", "Side Flip x2", "Backflip to Front 180", "Front 180 to Backflip", "Side Flip Backflip", "Arabian", "Standing Front flip", "Standing Backflip", "Knee Frontflip", "Knee Sideflip", "Cheat Gainer", "Tunnel Flip", "Pike Backflip", "Layout Backflip", "Flashkick", "Layout Frontflip", "Pike Frontflip", "Pullover", "Loser", "A-Twist", "Russian Front Flip"
+                
             ],
             "medium": [
-                "Gainer", "Gainer Full", "Inward Front", "Inward Side", "Backfull", "Cork", "Btwist", "Cody", "Front Full", "Rudy", "Rodeo Backflip", "Backflip to Knee Frontflip", "Backflip to Stomach", "Frontflip to Kaboom", "Kaboom x2", "Backfull x2", "Backflip x3", "Frontflip x3", "Sideflip x3", "Arabian Front 180", "Backflip to Frontflip to Sideflip", "Sideflip to Backflip to Frontflip", "Frontflip to Backflip", "Frontflip to Backflip to Sideflip", "Front 180 x3", "Backflip 1.5 twists", "Backflip to Stomach Cody", "Webster x2", "Backflip to Kaboom", "Full-Down", "Ballout", "Standing Knee Frontflip", "Stall Backflip", "Arabian-Unhalf"
+                
             ],
             "hard": [
-                "Double Arabian", "Double Kaboom", "Double Cody", "Double Front Flip", "Double Back Flip", "Double Side Flip", "Double Full", "Randy", "Front Double Full", "Double Cork", "Full-Up", "Btwist Cork", "Double B-Twist", "Zach", "Ballout x 2", "Backflip x 5", "Front 180 to Arabian", "Cody Full", "Cody Full-Down", "Kaboom Full", "Knee Backflip", "Fliffus", "Dark-Side Side Flip", "Dark-Side Back Full", "Dark-Side Cork", "Dark-Side Front 180", "Dark-Side Rudy", "Full to Double Full", "Full x3", "Rudy x2", "Kaboom to Cody", "Cody to Kaboom", "Cody x2", "Swing Through Cork", "Full 1.5 Twists Rudy"
+                
             ],
             "pro": [
-                "Double Full x2", "Crock", "Stall-In", "Coke-A-Cola", "Triple Full", "Adolf", "Full-In", "Full-Out", "Handstand Kong Gainer", "Half-In Half-Out", "Full-In Full-Out", "Knee Double Frontflip", "Knee Full", "Zach x2", "Triple Backflip", "Triple Frontflip", "Triple Sideflip", "Triffus", "Standing Dub Back", "Dub Back x2", "Dub Front x2", "Dub Side x2", "Cody Double Full", "Double Cheat Gainer"
+                
             ]
 
         }
-    },
-    "warmupFlips": [
-        "Front Flip",
-        "Back Flip",
-        "Left Flip",
-        "Right Flip",
-        "180 Flip",
-        "360 Flip"
-    ]
+    }
 
 }

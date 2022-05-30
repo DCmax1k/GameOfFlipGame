@@ -4,6 +4,7 @@ import sendData from './sendData';
 import '../stylesheets/GamePage.css';
 //import gameData from './gameData.json';
 import gameData from './gameDataFuture.json';
+import theme1 from './static/theme1.wav';
 
 import GameHome from './GameHome';
 import Warmup from './Warmup';
@@ -34,7 +35,10 @@ export default class GamePage extends React.Component {
                 difficulty: '', // easy, medium, hard, pro 
             },
             user: {},
+            themePlaying: false,
         }
+        this.audio = new Audio(theme1);
+
         this.componentDidMount = this.componentDidMount.bind(this);
         this.warmup = this.warmup.bind(this);
         this.playWithFriends = this.playWithFriends.bind(this);
@@ -45,7 +49,7 @@ export default class GamePage extends React.Component {
         this.setGamemode = this.setGamemode.bind(this);
         this.setCategory = this.setCategory.bind(this);
         this.setDifficulty = this.setDifficulty.bind(this);
-
+        this.playPause = this.playPause.bind(this);
     }
 
     async componentDidMount() {
@@ -140,9 +144,25 @@ export default class GamePage extends React.Component {
         return gameData.categories[cg][diff];
     }
 
+    playPause() {
+        this.audio.loop = true;
+        let themePlaying = this.state.themePlaying;
+        if (themePlaying) {
+          this.audio.pause();
+        } else {
+          this.audio.play();
+        }
+        this.setState({ themePlaying: !themePlaying });
+      };
+
     render() {
         return (
             <div className='GamePage'>
+                <div className={`music ${this.state.themePlaying?'active':''} ${this.state.game.page === 'playing' || this.state.game.page === 'warmup'?'middle':''}`}>
+                    <button onClick={this.playPause}>
+                        <i className="fa-solid fa-music"></i>
+                    </button>
+                </div>
 
                 { this.state.game.page === 'home' ? (
                     <GameHome warmup={this.warmup} playWithFriends={this.playWithFriends} />
