@@ -18,13 +18,19 @@
 
         },
         "Trampoline": {
-            "EasyFlips": {
+            "EasyFlips": [
+                "Front Flip",
+                "Side Flip"
+                
 
-            },
-            "MediumFlips": {
+            ],
+            "MediumFlips": [
 
-            },
+            ],
             "HardFlips": {
+
+            },
+            "Pro": {
 
             }
         }

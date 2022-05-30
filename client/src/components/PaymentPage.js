@@ -41,7 +41,9 @@ class PaymentPage extends React.Component {
                 <div className='logo'>
                     <img src='/images/logo.png' alt='logo' />
                 </div>
-                <h1 className='bigText'>Payment</h1>
+                <h1 className='bigText'>Buy Our App!</h1>
+                <div className='bigText'>ONLY $0.99!</div>
+                <div className='bigText'>It's a deal of a lifetime!</div>
                 {this.state.options.clientSecret && this.state.user && (
                 <Elements options={this.state.options} stripe={stripePromise}>
                     <CheckoutForm />

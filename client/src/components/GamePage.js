@@ -126,7 +126,9 @@ export default class GamePage extends React.Component {
                 ) : null
                 }
                 { this.state.game.page === 'warmup' ? (
-                    <Warmup />
+                    <Warmup 
+                        setPage={this.setPage}
+                    />
                 ) : null
                 }
                 { this.state.game.page === 'enterPlayerNames' ? (
