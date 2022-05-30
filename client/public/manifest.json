@@ -1,6 +1,6 @@
 {
   "short_name": "Flip Generator",
-  "name": "Flip Generation Game",
+  "name": "Flip Generation",
   "icons": [
     {
       "src": "/images/logo192.jpg",
@@ -15,8 +15,8 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "start_url": "/",
+  "display": "fullscreen",
+  "theme_color": "#ef7800",
+  "background_color": "#fe5e00"
 }
