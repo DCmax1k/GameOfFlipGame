@@ -4,7 +4,7 @@ import sendData from './sendData';
 import '../stylesheets/GamePage.css';
 //import gameData from './gameData.json';
 import gameData from './gameDataFuture.json';
-import theme1 from './static/theme1.wav';
+import theme1 from './static/theme2.wav';
 
 import GameHome from './GameHome';
 import Warmup from './Warmup';
