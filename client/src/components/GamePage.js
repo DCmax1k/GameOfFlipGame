@@ -6,19 +6,20 @@ import '../stylesheets/GamePage.css';
 import gameData from './gameDataFuture.json';
 import theme1 from './static/theme2.wav';
 
-// images to preload
-import gardenTrampImg from './static/images/gardenTramp.png';
-import airTrackImg from './static/images/airTrack.png';
-import groundImg from './static/images/ground.png';
-import superTrampImg from './static/images/superTramp.png';
-import flippingImg from './static/images/flipping.svg';
-
 import GameHome from './GameHome';
 import Warmup from './Warmup';
 import EnterPlayerNames from './EnterPlayerNames';
 import SelectMode from './SelectMode';
 import SelectOptions from './SelectOptions';
 import Playing from './Playing';
+
+// images to preload
+const gardenTrampImg = '/images/gardenTramp.png';
+const airTrackImg = '/images/airTrack.png';
+const groundImg = '/images/ground.png';
+const superTrampImg = '/images/superTramp.png';
+const flippingImg = '/images/flipping.svg';
+const images = [gardenTrampImg, superTrampImg, groundImg, airTrackImg, flippingImg];
 
 class Player {
     constructor(name, index)  {
@@ -43,7 +44,6 @@ export default class GamePage extends React.Component {
             },
             user: {},
             themePlaying: false,
-            images: [],
         }
         this.audio = new Audio(theme1);
 
@@ -61,15 +61,6 @@ export default class GamePage extends React.Component {
     }
 
     async componentDidMount() {
-        // Preload all images throughout the game
-        const images = [gardenTrampImg, superTrampImg, groundImg, airTrackImg, flippingImg];
-        images.forEach(img => {
-            const pre =  new Image();
-            pre.src = img;
-        });
-        this.setState({images: images});
-        console.log(images);
-
         try {
             const checkLogin = await sendData('/checklogin', {});
             //const checkLogin = {status: 'success', redirect: 'game', user: {username: 'test'}}; // TESTING PURPOSES ONLY
@@ -187,7 +178,7 @@ export default class GamePage extends React.Component {
                 { this.state.game.page === 'warmup' ? (
                     <Warmup 
                         setPage={this.setPage}
-                        images={this.state.images}
+                        images={images}
                     />
                 ) : null
                 }
@@ -219,7 +210,7 @@ export default class GamePage extends React.Component {
                         setPage={this.setPage}
                         setCategory={this.setCategory}
                         setDifficulty={this.setDifficulty}
-                        images={this.state.images}
+                        images={images}
                     />
                 ) : null
                 }
@@ -228,7 +219,7 @@ export default class GamePage extends React.Component {
                         game={this.state.game}
                         user={this.state.user}
                         setPage={this.setPage}
-                        images={this.state.images}
+                        images={images}
                     />
                 ) : null
                 }

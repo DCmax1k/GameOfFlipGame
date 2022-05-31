@@ -1,5 +1,5 @@
 const CACHE_NAME = "v1";
-const urlsToCache = ['index.html', 'offline.html'];
+const urlsToCache = ['index.html', 'offline.html', 'images/gardenTramp.png', 'images/superTramp.png', 'images/ground.png', 'images/airTrack.png', 'images/logo.png', 'images/flipping.svg'];
 
 // Install SW
 self.addEventListener('install', (e) => {
@@ -14,8 +14,10 @@ self.addEventListener('install', (e) => {
 // Listen for requests
 self.addEventListener('fetch', (e) => {
     e.respondWith(
-        caches.match(e.request).then(() => {
-            return fetch(e.request)
+        caches.match(e.request).then((res) => {
+            // return fetch(e.request)
+            // .catch(() => caches.match('offline.html'));
+            return res || fetch(e.request)
             .catch(() => caches.match('offline.html'));
         })
     );
