@@ -18,7 +18,7 @@ class Playing extends React.Component {
             return (
                 <div className='Playing'>
                     { this.state.game.gamemode === 'Game of Flip' && (
-                        <GameOfFlip game={this.state.game} setPage={this.props.setPage} allPlayers={this.state.allPlayers} allFlips={this.state.allFlips} />
+                        <GameOfFlip game={this.state.game} setPage={this.props.setPage} allPlayers={this.state.allPlayers} allFlips={this.state.allFlips} images={this.props.images}/>
                     )}
                     { this.state.game.gamemode === 'Add On' && (
                         <AddOn game={this.state.game} setPage={this.props.setPage} />

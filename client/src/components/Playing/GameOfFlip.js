@@ -269,8 +269,9 @@ class GameOfFlip extends React.Component {
                 </div>
 
                 {/* Show Flip */}
+                {console.log(this.props)}
                 <div className='flip'>
-                    <img src='/images/flipping.svg' alt='Flip img' />
+                    <img src={this.props.images[4]} alt='Flip img' />
                     <h1 className='bigText'>{this.state.currentFlip}</h1>
                 </div>
 

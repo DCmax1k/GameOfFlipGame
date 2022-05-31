@@ -42,18 +42,18 @@ function SelectOptions(props) {
             <div className='bigText'>Select <br /> Setting</div>
 
             <div className="buttons">
-                <div className="modeButton">
-                    <button onClick={() => {setCategory('trampoline')}}>Garden Tramp</button>
-                </div>
-                <div className="modeButton disabled">
-                    <button>Super Tramp</button>
-                </div>
-                <div className="modeButton disabled">
-                    <button>Ground</button>
-                </div>
-                <div className="modeButton disabled">
-                    <button>Air Track</button>
-                </div>
+                <button className="modeButton" onClick={() => {setCategory('trampoline')}}>
+                    <img src={props.images[0]} alt="" />
+                </button>
+                <button className="modeButton disabled">
+                    <img src={props.images[1]} alt="" />
+                </button>
+                <button className="modeButton disabled">
+                    <img src={props.images[2]} alt="" />
+                </button>
+                <button className="modeButton disabled">
+                    <img src={props.images[3]} alt="" />
+                </button>
             </div>
             <button className="button back" onClick={goBack}>Back</button>
         </div>

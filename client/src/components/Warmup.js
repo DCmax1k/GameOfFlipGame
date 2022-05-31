@@ -25,18 +25,18 @@ function Warmup(props) {
             </div>
 
             <div className="buttons">
-                <div className="modeButton">
-                    <button>Garden Tramp</button>
-                </div>
-                <div className="modeButton">
-                    <button>Super Tramp</button>
-                </div>
-                <div className="modeButton">
-                    <button>Ground</button>
-                </div>
-                <div className="modeButton">
-                    <button>Air Track</button>
-                </div>
+            <button className="modeButton disabled">
+                    <img src={props.images[0]} alt="" />
+                </button>
+                <button className="modeButton disabled">
+                    <img src={props.images[1]} alt="" />
+                </button>
+                <button className="modeButton disabled">
+                    <img src={props.images[2]} alt="" />
+                </button>
+                <button className="modeButton disabled">
+                    <img src={props.images[3]} alt="" />
+                </button>
             </div>
         </div>
     )
