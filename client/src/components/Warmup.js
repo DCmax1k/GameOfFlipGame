@@ -1,11 +1,51 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../stylesheets/Warmup.css';
+import PlayingWarmup from './Playing/PlayingWarmup';
+
+import gameData from './gameDataFuture.json';
 
 function Warmup(props) {
 
 
     function exitPage() {
         props.setPage('home');
+    }
+
+    const [mode, setMode] = useState(''); //  tramp, super, ground, air
+    const [flips, setFlips] = useState([]);
+    const [modeURL, setModeURL] = useState('');
+
+
+    function start(mode) {
+        setMode(mode);
+        switch (mode) {
+            case 'tramp':
+                let { trampoline } = gameData.categories;
+                let trampFlips = [...trampoline.easy, ...trampoline.medium, ...trampoline.hard, ...trampoline.pro];
+                setFlips(trampFlips);
+                setModeURL('images/gardenTramp.png');
+                break;
+            case 'super':
+                let { superTramp } = gameData.categories;
+                let superFlips = [...superTramp.easy, ...superTramp.medium, ...superTramp.hard, ...superTramp.pro];
+                setFlips(superFlips);
+                setModeURL('images/superTramp.png');
+                break;
+            case 'ground':
+                let { ground } = gameData.categories;
+                let groundFlips = [...ground.easy, ...ground.medium, ...ground.hard, ...ground.pro];
+                setFlips(groundFlips);
+                setModeURL('images/ground.png');
+                break;
+            case 'air':
+                let { airTrack } = gameData.categories;
+                let airFlips = [...airTrack.easy, ...airTrack.medium, ...airTrack.hard, ...airTrack.pro];
+                setFlips(airFlips);
+                setModeURL('images/airTrack.png');
+                break;
+            default:
+                break;
+        }
     }
 
     return (
@@ -24,8 +64,9 @@ function Warmup(props) {
                 <div className='placeholder'></div>
             </div>
 
+            { !mode && (
             <div className="buttons">
-            <button className="modeButton disabled">
+                <button className="modeButton" onClick={() => {start('tramp')}}>
                     <img src={props.images[0]} alt="" />
                 </button>
                 <button className="modeButton disabled">
@@ -38,6 +79,16 @@ function Warmup(props) {
                     <img src={props.images[3]} alt="" />
                 </button>
             </div>
+            )}
+            { mode && (
+                <PlayingWarmup
+                    flips={flips}
+                    mode={mode}
+                    modeURL={modeURL}
+                />
+            )}
+
+
         </div>
     )
 }
