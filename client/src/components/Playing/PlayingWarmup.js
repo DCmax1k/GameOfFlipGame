@@ -28,8 +28,8 @@ class PlayingWarmup extends Component {
 
     resetGame() {
         let flips = [...this.state.flipsUsed, ...this.state.flips];
-        let flip = flips[Math.floor(Math.random() * this.state.flips.length)];
-        flips = this.state.flips.filter(f => f !== flip);
+        let flip = flips[Math.floor(Math.random() * flips.length)];
+        flips = flips.filter(f => f !== flip);
         this.setState({
             flipsUsed: [flip],
             flips: flips,
