@@ -16,6 +16,9 @@ class PlayingWarmup extends Component {
     }
 
     pickFlip() {
+        if (this.state.flips.length === 0) {
+            return this.resetGame();
+        }
         let flip = this.state.flips[Math.floor(Math.random() * this.state.flips.length)];
         let flipsUsed = [...this.state.flipsUsed, flip];
         const flips = this.state.flips.filter(f => f !== flip);
@@ -24,8 +27,9 @@ class PlayingWarmup extends Component {
     }
 
     resetGame() {
-        let flip = this.state.flips[Math.floor(Math.random() * this.state.flips.length)];
-        const flips = this.state.flips.filter(f => f !== flip);
+        let flips = [...this.state.flipsUsed, ...this.state.flips];
+        let flip = flips[Math.floor(Math.random() * this.state.flips.length)];
+        flips = this.state.flips.filter(f => f !== flip);
         this.setState({
             flipsUsed: [flip],
             flips: flips,
