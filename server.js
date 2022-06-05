@@ -34,7 +34,7 @@ app.post('/checklogin', async (req, res) => {
 });
 
 const currentAppAlert = ['Welcome', 'Hope you enjoy playing, Flip Generator!']
-app.get('/appalert', cors(), () => {
+app.get('/appalert', cors(), (req, res) => {
     return res.json({ title: currentAppAlert[0], message: currentAppAlert[1] });
 });
 
@@ -99,5 +99,5 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(() => 
 
 
 app.listen(process.env.PORT || 80, () => {
-    console.log('Server listening on port 3001');
+    console.log('Server listening on port 80');
 });
