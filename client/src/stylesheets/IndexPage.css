@@ -105,3 +105,13 @@
     padding: 10px;
     border-radius: 15px;
 }
+
+.GameHome .adminMenu {
+    transform: translateY(-100%);
+    background-color: grey;
+    z-index: 100;
+}
+
+.GameHome .adminMenu.active {
+    transform: translateY(0);
+}

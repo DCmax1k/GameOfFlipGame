@@ -63,7 +63,7 @@ export default class GamePage extends React.Component {
     async componentDidMount() {
         try {
             const checkLogin = await sendData('/checklogin', {});
-            //const checkLogin = {status: 'success', redirect: 'game', user: {username: 'test'}}; // TESTING PURPOSES ONLY
+            //const checkLogin = {status: 'success', redirect: 'game', user: {username: 'test', rank: 'admin'}}; // TESTING PURPOSES ONLY
 
             if (checkLogin.status !== 'success') {
                 window.location.href = `/`;
@@ -172,7 +172,7 @@ export default class GamePage extends React.Component {
                 </div>
 
                 { this.state.game.page === 'home' ? (
-                    <GameHome warmup={this.warmup} playWithFriends={this.playWithFriends} />
+                    <GameHome warmup={this.warmup} playWithFriends={this.playWithFriends} user={this.state.user} />
                 ) : null
                 }
                 { this.state.game.page === 'warmup' ? (

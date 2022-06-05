@@ -25,6 +25,8 @@ function IndexPage() {
 
     return (
         <div className='IndexPage'>
+            
+
             <div className='logo'>
                 <img src='/images/logo.png' alt='logo' />
             </div>

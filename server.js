@@ -33,11 +33,6 @@ app.post('/checklogin', async (req, res) => {
     });
 });
 
-const currentAppAlert = ['Welcome', 'Hope you enjoy playing, Flip Generator!']
-app.get('/appalert', cors(), (req, res) => {
-    return res.json({ title: currentAppAlert[0], message: currentAppAlert[1] });
-});
-
 const loginRoute = require('./routes/login');
 app.use('/login', loginRoute);
 
@@ -49,6 +44,9 @@ app.use('/game', gameRoute);
 
 const paymentRoute = require('./routes/payment');
 app.use('/payment', paymentRoute);
+
+const appAlertRoute = require('./routes/appalert');
+app.use('/appalert', appAlertRoute);
 
 // STRIPE PAYMENTS
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
