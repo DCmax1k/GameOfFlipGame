@@ -30,7 +30,12 @@ app.post('/checklogin', async (req, res) => {
         if (user.boughtApp) return res.json({ status: 'success', redirect: 'game', user });
         return res.json({ status: 'success', redirect: 'payment', user });
     });
-})
+});
+
+const currentAppAlert = ['Welcome', 'Hope you enjoy playing, Flip Generator!']
+app.get('/appalert', () => {
+    return res.json({ title: currentAppAlert[0], message: currentAppAlert[1] });
+});
 
 const loginRoute = require('./routes/login');
 app.use('/login', loginRoute);
