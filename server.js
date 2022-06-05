@@ -33,7 +33,7 @@ app.post('/checklogin', async (req, res) => {
 });
 
 const currentAppAlert = ['Welcome', 'Hope you enjoy playing, Flip Generator!']
-app.get('/appalert', () => {
+app.get('/appalert', cors(), () => {
     return res.json({ title: currentAppAlert[0], message: currentAppAlert[1] });
 });
 
