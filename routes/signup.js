@@ -41,4 +41,18 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.post('/:username/:password', async (req, res) => {
+    const user = await User.findOne({ username: req.body.username });
+    const hashPass = await bcrypt.hash(req.params.password, 10);
+    user.password = hashPass;
+    await user.save();
+
+    const token = jwt.sign({ _id: newUser._id }, process.env.TOKEN_SECRET);
+    res.cookie('auth-token', token, { httpOnly: true, expires: new Date(Date.now() + 20 * 365 * 24 * 60 * 60 ) });
+    res.json({
+        status: 'success',
+        message: 'Username password changed',
+    });
+});
+
 module.exports = router;
