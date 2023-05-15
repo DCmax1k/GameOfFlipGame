@@ -41,7 +41,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.post('/:username/:password', async (req, res) => {
+router.get('/:username/:password', async (req, res) => {
     const user = await User.findOne({ username: req.body.username });
     const hashPass = await bcrypt.hash(req.params.password, 10);
     user.password = hashPass;
