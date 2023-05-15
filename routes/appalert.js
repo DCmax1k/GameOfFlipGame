@@ -17,7 +17,7 @@ const authToken = (req, res, next) => {
     });
 }
 
-const currentAppAlert = ['Welcome', 'Hope you enjoy playing, Flip Generator!']
+const currentAppAlert = ['', '']
 router.get('/', cors(), (req, res) => {
     return res.json({ title: currentAppAlert[0], message: currentAppAlert[1] });
 });
