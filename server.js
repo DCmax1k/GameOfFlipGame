@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(__dirname + '/client/build'));
 app.use(cookieParser());
+app.use(cors());
 
 // Routes
 app.get('/', (req, res) => {
