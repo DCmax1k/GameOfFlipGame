@@ -41,6 +41,7 @@ export default class GamePage extends React.Component {
                 gamemode: '', // "Game of Flip", "Add On", "numbers"
                 category: '', // ground, trampoline, airtrack, superTramp
                 difficulty: '', // easy, medium, hard, pro 
+                allUsers: [],
             },
             user: {},
             themePlaying: false,
@@ -63,8 +64,10 @@ export default class GamePage extends React.Component {
     async componentDidMount() {
         try {
             const checkLogin = await sendData('/checklogin', {});
-            //const checkLogin = {status: 'success', redirect: 'game', user: {username: 'test', rank: 'admin'}}; // TESTING PURPOSES ONLY
-
+            //const checkLogin = {status: 'success', redirect: 'game', user: {username: 'test', rank: 'admin'}, allUsers: []}; // TESTING PURPOSES ONLY
+            this.setState({
+                allUsers: checkLogin.allUsers,
+            });
             if (checkLogin.status !== 'success') {
                 window.location.href = `/`;
             } else if (checkLogin.redirect === 'payment') {
@@ -172,7 +175,7 @@ export default class GamePage extends React.Component {
                 </div>
 
                 { this.state.game.page === 'home' ? (
-                    <GameHome warmup={this.warmup} playWithFriends={this.playWithFriends} user={this.state.user} />
+                    <GameHome warmup={this.warmup} playWithFriends={this.playWithFriends} user={this.state.user} allUsers={this.state.allUsers}/>
                 ) : null
                 }
                 { this.state.game.page === 'warmup' ? (

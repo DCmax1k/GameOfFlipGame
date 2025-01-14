@@ -24,6 +24,20 @@ function GameHome(props) {
         setAlertMessageText(e.target.value);
     }
 
+    const logout = async () => {
+        await sendData('/login/logout', {});
+        window.location.href = '/';
+    }
+
+    const rankChange = async (u) => {
+        const changeRank = await sendData('/login/paidchange', {
+            username: u,
+        });
+        if (changeRank.status === 'success') {
+            alert('Successfully gifted app!');
+        }
+    }
+
     return (
         <div className='GameHome'>
 
@@ -40,6 +54,16 @@ function GameHome(props) {
                         <input onChange={changeMessage} value={alertMessageText} placeholder='App alert message' />
                         <button onClick={sendAlert}>Update</button>
 
+                        <hr />
+
+                        {/* All users shown with a button */}
+                        <h2>All users</h2>
+                        {props.allUsers.map((user, index) => (
+                            <div key={index}>{user.username} - {user.rank} <button style={{display: user.boughtApp ? 'none' : 'inline-block'}} onClick={() => rankChange(user.username)}>Gift</button></div>
+                        ))}
+
+                
+
             </div>
 
             <div className='logo'>
@@ -49,6 +73,7 @@ function GameHome(props) {
             <div className='buttons'>
                 <button className='button' onClick={props.warmup}>Warmup</button>
                 <button className='button' onClick={props.playWithFriends}>Play with friends</button>
+                <button className='button' style={{height: 20, fontSize: 13}} onClick={logout}>Log out</button>
             </div>
         </div>
     );

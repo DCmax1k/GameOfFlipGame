@@ -28,8 +28,15 @@ app.post('/checklogin', async (req, res) => {
     jwt.verify(token, process.env.TOKEN_SECRET, async (err, decoded) => {
         if (err) return res.json({ status: 'error', message: 'Invalid token' });
         const user = await User.findOne({ _id: decoded._id });
+        const allUsers = [];
+        if (user.rank === 'admin') {
+            const users = await User.find();
+            users.forEach(user => {
+                allUsers.push({ username: user.username, rank: user.rank, boughtApp: user.boughtApp });
+            });
+        }
         res.cookie('auth-token', token, { httpOnly: true, expires: new Date(Date.now() + 20 * 365 * 24 * 60 * 60 * 1000)});
-        if (user.boughtApp) return res.json({ status: 'success', redirect: 'game', user });
+        if (user.boughtApp) return res.json({ status: 'success', redirect: 'game', user, allUsers, });
         return res.json({ status: 'success', redirect: 'payment', user });
     });
 });
@@ -97,6 +104,6 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }).then(() => 
 });
 
 
-app.listen(process.env.PORT || 80, () => {
-    console.log('Server listening on port 80');
+app.listen(process.env.PORT || 3009, () => {
+    console.log('Server listening on port 3009');
 });
