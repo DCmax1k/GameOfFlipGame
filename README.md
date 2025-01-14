@@ -1,5 +1,5 @@
 <!-- [Project Link](https://www..com/) -->
-Project Link (TBD)
+[Project Link](https://flipgenerator.digitalcaldwell.com/)
 
 ## About the Project!
 
@@ -25,6 +25,3 @@ MongoDB
 
 Git
 
-### Publish
-
-Heroku
