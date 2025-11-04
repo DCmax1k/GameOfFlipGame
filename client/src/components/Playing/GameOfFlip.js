@@ -110,6 +110,8 @@ class GameOfFlip extends React.Component {
     }
 
     successFlip() {
+        console.log("The winner: ", this.state.winner);
+        if (this.state.winner) return;
         if (this.state.playingSuccessAni) return;
         this.setState({
             playingSuccessAni: true,
@@ -122,6 +124,8 @@ class GameOfFlip extends React.Component {
         }, 500);
     }
     failFlip() {
+        console.log("The winner: ", this.state.winner);
+        if (this.state.winner) return;
         if (this.state.playingFailAni) return;
         const currentPlayerIndex = this.state.currentPlayerIndex;
         const removedPlayer = this.addLetter(currentPlayerIndex);
